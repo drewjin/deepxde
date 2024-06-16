@@ -22,7 +22,7 @@ def u_boundary(_):
 def boundary(_, on_boundary):
     return on_boundary
 
-
+ 
 bc = dde.icbc.DirichletBC(geom, u_boundary, boundary)
 
 # Define PDE

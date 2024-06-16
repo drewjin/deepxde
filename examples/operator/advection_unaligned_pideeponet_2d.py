@@ -2,7 +2,7 @@
 import deepxde as dde
 import matplotlib.pyplot as plt
 import numpy as np
-
+ 
 if dde.backend.backend_name == "paddle":
     import paddle
 

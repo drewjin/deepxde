@@ -3,7 +3,7 @@ import deepxde as dde
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+ 
 # PDE equation
 def pde(xy, uvp, aux):
     mu = 0.01

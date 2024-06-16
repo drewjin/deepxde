@@ -2,7 +2,7 @@
 import deepxde as dde
 import matplotlib.pyplot as plt
 import numpy as np
-
+ 
 # Load dataset
 d = np.load("antiderivative_unaligned_train.npz", allow_pickle=True)
 X_train = (d["X_train0"].astype(np.float32), d["X_train1"].astype(np.float32))

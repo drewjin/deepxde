@@ -6,7 +6,7 @@ import numpy as np
 
 # PDE
 geom = dde.geometry.TimeDomain(0, 1)
-
+ 
 
 def pde(x, u, v):
     return dde.grad.jacobian(u, x) - v
