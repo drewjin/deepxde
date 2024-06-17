@@ -70,6 +70,7 @@ class DeepONet(NN):
         multi_output_strategy=None,
     ):
         super().__init__()
+        #检查activation是否是一个字典类型
         if isinstance(activation, dict):
             self.activation_branch = activation["branch"]
             self.activation_trunk = activations.get(activation["trunk"])
@@ -78,6 +79,8 @@ class DeepONet(NN):
         self.kernel_initializer = kernel_initializer
 
         self.num_outputs = num_outputs
+
+        #判断self.num_outputs和multi_output_strategy进行逻辑判断，是否保持一致
         if self.num_outputs == 1:
             if multi_output_strategy is not None:
                 raise ValueError(
