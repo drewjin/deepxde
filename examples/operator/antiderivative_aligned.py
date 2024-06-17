@@ -1,8 +1,11 @@
 """Backend supported: tensorflow.compat.v1, tensorflow, pytorch, paddle"""
+import os
+os.environ['DDE_BACKEND'] = "pytorch"
+
 import deepxde as dde
 import matplotlib.pyplot as plt
 import numpy as np
-  
+
 # Load dataset
 d = np.load("antiderivative_aligned_train.npz", allow_pickle=True)
 X_train = (d["X"][0].astype(np.float32), d["X"][1].astype(np.float32))
@@ -15,10 +18,10 @@ data = dde.data.TripleCartesianProd(
     X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test
 )
 
-# Choose a network
+# Choose a network [150,100] [100,1]
 m = 100
 dim_x = 1
-net = dde.nn.DeepONetCartesianProd(
+net = dde.nn.pytorch.DeepONetCartesianProd(
     [m, 40, 40],
     [dim_x, 40, 40],
     "relu",
