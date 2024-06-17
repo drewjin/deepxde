@@ -29,7 +29,7 @@ from . import nn
 from . import utils
 from . import zcs
 
-from .backend import Variable
+from .backend.backend import Variable
 from .model import Model
 from .utils import saveplot
 
